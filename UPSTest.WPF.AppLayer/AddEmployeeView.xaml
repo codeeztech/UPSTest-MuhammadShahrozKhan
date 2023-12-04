@@ -1,0 +1,35 @@
+﻿<Window x:Class="UPSTest.WPF.AppLayer.AddEmployeeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Employee" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Name:"/>
+        <TextBox Grid.Row="1" Text="{Binding Employee.Name, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="2" Content="Email:"/>
+        <TextBox Grid.Row="3" Text="{Binding Employee.Email, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="4" Content="Gender:"/>
+        <ComboBox Grid.Row="5" ItemsSource="{Binding Genders}" SelectedItem="{Binding Employee.Gender}" />
+
+        <Label Grid.Row="6" Content="Status:"/>
+        <ComboBox Grid.Row="7" ItemsSource="{Binding Statuses}" SelectedItem="{Binding Employee.Status}" />
+
+        <Button Grid.Row="8" Content="Save" Command="{Binding SaveCommand}"/>
+    </Grid>
+</Window>

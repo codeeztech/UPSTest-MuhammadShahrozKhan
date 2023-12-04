@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "C5mA3NoZIHXwfsBELDrb5Rq/vPubKJK0jYYIU5lLB1z9dSRdUjmbFVF0nmdL2fOnWuzac3B3kMCmyGhrbgHdgg==",
+  "dgSpecHash": "xZZ0Gic2nFTbjXXVn/0t1rrlOjKek6/Ts4lJwRRYjwCJw+6WiuACphLJrmlZDF2izfwySz0aUeTesGRn1ZR/Hw==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

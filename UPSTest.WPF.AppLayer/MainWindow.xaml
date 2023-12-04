@@ -3,25 +3,56 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UPSTest.WPF.AppLayer"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         TextElement.FontWeight="Regular"
-         TextElement.FontSize="13"
-         TextOptions.TextFormattingMode="Ideal"
-         TextOptions.TextRenderingMode="Auto"
-         Background="{DynamicResource MaterialDesignPaper}"
-         FontFamily="{DynamicResource MaterialDesignFont}">
-    <Grid>
-        <materialDesign:Card >
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
-       
-        <Label Content="Employee Name" HorizontalAlignment="Left" Margin="87,49,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="199,53,0,0" TextWrapping="Wrap"  Focusable="True" VerticalAlignment="Top" Width="148"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="360,53,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        
+        mc:Ignorable="d"
+        Title="Employee Management" Height="600" Width="1000">
+
+    <Grid >
+        <!--<materialDesign:SnackbarMessageQueue x:Key="SnackbarMessageQueue" />-->
+        <ProgressBar
+            Name="loadingSpinner"
+            Width="50"
+            Height="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            IsIndeterminate="True"
+            Visibility="Collapsed" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+            <TextBlock Text="EMPLOYEE MANAGEMENT" FontSize="24" FontWeight="Bold" Margin="0 10" HorizontalAlignment="Center"/>
+                <Button Content="Add New Employee" Name="btnAddEmployee" Click="btnAddEmployee_Click" HorizontalAlignment="Right" Margin="10 10" Width="200"/>
+                <Button Content="Refresh" Name="btnRefresh" Click="btnRefresh_Click" HorizontalAlignment="Right" Margin="10 10" Width="200"/>
+
+                <TextBox Text="{Binding SearchText}" Margin="0 10"/>
+
+            <DataGrid x:Name="EmployeesDataGrid"
+          ItemsSource="{Binding Employees, Mode=TwoWay}"
+          AutoGenerateColumns="False"
+          IsReadOnly="True">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" />
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+
+                    <DataGridTemplateColumn Header="Actions">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Edit" Command="{Binding DataContext.EditEmployeeCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="0 0 10 0"/>
+                                    <Button Content="Delete" Command="{Binding DataContext.DeleteEmployeeCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Style="{StaticResource MaterialDesignRaisedAccentButton}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <!-- Pagination controls can be added here -->
+        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

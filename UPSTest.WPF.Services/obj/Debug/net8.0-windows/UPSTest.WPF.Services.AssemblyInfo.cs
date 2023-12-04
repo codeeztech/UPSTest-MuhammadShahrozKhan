@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UPSTest.WPF.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5eec5f18c7b9ffd36c3e274a237c7c96a6c2089")]
 [assembly: System.Reflection.AssemblyProductAttribute("UPSTest.WPF.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UPSTest.WPF.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

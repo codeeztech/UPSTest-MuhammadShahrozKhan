@@ -1,0 +1,32 @@
+﻿<Window x:Class="UPSTest.WPF.AppLayer.EditEmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Edit Employee" Height="300" Width="400">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Employee ID:" />
+            <TextBox Text="{Binding Employee.Id, Mode=OneWay}" IsEnabled="False" />
+
+            <TextBlock Text="Name:" />
+            <TextBox Text="{Binding Employee.Name}" />
+
+            <TextBlock Text="Email:" />
+            <TextBox Text="{Binding Employee.Email}" />
+
+            <TextBlock Text="Gender:" />
+            <!--<ComboBox Grid.Row="5" ItemsSource="{Binding Genders}" SelectedItem="{Binding Employee.Gender}" />-->
+            <ComboBox Grid.Row="5" ItemsSource="{Binding Genders}" SelectedItem="{Binding Employee.Gender}" />
+
+            <!--<TextBox Text="{Binding Employee.Gender}" />-->
+
+            <TextBlock Text="Status:" />
+            <ComboBox Grid.Row="7" ItemsSource="{Binding Statuses}" SelectedItem="{Binding Employee.Status}" />
+            <!--<TextBox Text="{Binding Employee.Status}" />-->
+
+            <Button Content="Save" Command="{Binding SaveCommand}" Margin="0 10 0 0" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
