@@ -10,3 +10,14 @@ D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahroz
 D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\obj\Debug\net8.0-windows\refint\UPSTest.WPF.Tests.dll
 D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\obj\Debug\net8.0-windows\UPSTest.WPF.Tests.pdb
 D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\obj\Debug\net8.0-windows\ref\UPSTest.WPF.Tests.dll
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.AppLayer.deps.json
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.AppLayer.runtimeconfig.json
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.AppLayer.exe
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.AppLayer.dll
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.Repositories.dll
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.Services.dll
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.AppLayer.pdb
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.Repositories.pdb
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\bin\Debug\net8.0-windows\UPSTest.WPF.Services.pdb
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\obj\Debug\net8.0-windows\UPSTest.WPF.Tests.csproj.AssemblyReference.cache
+D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Tests\obj\Debug\net8.0-windows\UPSTest.WPF.Tests.csproj.CopyComplete

@@ -79,7 +79,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
 
             SaveCommand = new RelayCommand(SaveEmployee);
 
-            Task.Run(() => LoadEmployeesAsync());
+            LoadEmployeesAsync();
 
             this.employeeViewModel = employeeViewModel;
         }
@@ -88,7 +88,8 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             try
             {
                 List<Employee> employees = await employeeService.GetAllEmployeeAsync();
-                Employees = new ObservableCollection<Employee>(employees);
+                if (employees != null)
+                    Employees = new ObservableCollection<Employee>(employees);
             }
             catch (Exception ex)
             {
@@ -122,18 +123,26 @@ namespace UPSTest.WPF.AppLayer.ViewModels
 
                 if (addedEmployee != null)
                 {
-                    employeeViewModel.AddEmployee();
-                    MainWindow mw = new MainWindow();
-                    mw.ViewModel_OnEmployeeAdded(null, null);
+                    Employees = [addedEmployee];
+
                     MessageBox.Show("Employee added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    CloseAddEmployeeWindow();
-                    Task.Run(NewUpdateLoadEmployeesAsync);
+
+
+                    if (employeeViewModel != null)
+                    {
+                        employeeViewModel.AddEmployee();
+
+                        MainWindow mw = new MainWindow();
+                        mw.ViewModel_OnEmployeeAdded(null, null);
+                        CloseAddEmployeeWindow();
+                        Task.Run(NewUpdateLoadEmployeesAsync);
+                        Employee = new Employee();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Failed to add employee. Please try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                Employee = new Employee();
             }
             catch (Exception ex)
             {

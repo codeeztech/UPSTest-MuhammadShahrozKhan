@@ -20,22 +20,6 @@ namespace UPSTest.WPF.Repositories
             httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiToken}");
         }
 
-        public async Task<List<Employee>> GetAllEmployeeAsync()
-        {
-            string url = ApiUrl;
-
-            HttpResponseMessage response = await httpClient.GetAsync(url);
-
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                List<Employee> result = JsonConvert.DeserializeObject<List<Employee>>(content);
-                return result;
-            }
-
-            return null;
-        }
-
         public async Task<List<Employee>> GetAllEmployeesAsync()
         {
             string url = ApiUrl;
@@ -114,6 +98,21 @@ namespace UPSTest.WPF.Repositories
             {
                 string content = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Employee>(content);
+            }
+
+            return null;
+        }
+
+        public async Task<List<Employee>> SearchEmployeesAsync(string searchName)
+        {
+            string url = $"{ApiUrl}?name={searchName}";
+
+            HttpResponseMessage response = await httpClient.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string result = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<Employee>>(result);
             }
 
             return null;

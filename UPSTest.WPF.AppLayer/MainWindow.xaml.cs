@@ -34,6 +34,8 @@ namespace UPSTest.WPF.AppLayer
             loadingSpinner.Visibility = Visibility.Visible;
             OnLoadWindowAsync();
             loadingSpinner.Visibility = Visibility.Collapsed;
+
+            txtSearch.Focus();
         }
 
         private void OnLoadWindowAsync()

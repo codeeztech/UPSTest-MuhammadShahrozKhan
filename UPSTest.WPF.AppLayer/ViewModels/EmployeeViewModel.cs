@@ -11,6 +11,11 @@ using UPSTest.WPF.Repositories.Models;
 using UPSTest.WPF.Services;
 using UPSTest.WPF.AppLayer;
 using System.Windows.Data;
+using System.Formats.Asn1;
+using System.Globalization;
+using System.IO;
+using CsvHelper;
+using Microsoft.Win32;
 
 namespace UPSTest.WPF.AppLayer.ViewModels
 {
@@ -20,6 +25,8 @@ namespace UPSTest.WPF.AppLayer.ViewModels
         public event EventHandler OnEmployeeAdded;
         public ICommand EditEmployeeCommand { get; private set; }
         public ICommand DeleteEmployeeCommand { get; private set; }
+        public ICommand SearchCommand { get; private set; }
+        public ICommand ExportToCsvCommand { get; private set; }
 
         private ObservableCollection<Employee> _employees;
         public ObservableCollection<Employee> Employees
@@ -49,7 +56,19 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
         }
 
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                OnPropertyChanged(nameof(SearchText));
 
+                // Trigger search when the text changes
+                SearchEmployeesAsync();
+            }
+        }
         public EmployeeViewModel(IEmployeeService employeeService)
         {
             Employees = new ObservableCollection<Employee>();
@@ -61,6 +80,8 @@ namespace UPSTest.WPF.AppLayer.ViewModels
 
             EditEmployeeCommand = new RelayCommand<Employee>(EditEmployee);
             DeleteEmployeeCommand = new RelayCommand<Employee>(DeleteEmployee);
+            SearchCommand = new RelayCommand(SearchEmployeesAsync);
+            ExportToCsvCommand = new RelayCommand(ExportToCsv);
         }
 
         private void EmployeeViewModel_OnEmployeeAdded(object? sender, EventArgs e)
@@ -92,7 +113,6 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
         }
 
-
         public async Task NewUpdateLoadEmployeesAsync()
         {
             try
@@ -105,6 +125,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 Console.WriteLine($"Error in LoadEmployeesAsync: {ex.Message}");
             }
         }
+
         public async Task LoadEmployeesAsync()
         {
             try
@@ -149,10 +170,55 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
         }
 
+        public async Task SearchEmployeesAsync()
+        {
+            try
+            {
+                // Trigger the search based on the current SearchText
+                List<Employee> searchResults = await employeeService.SearchEmployeesAsync(SearchText);
+                Employees = new ObservableCollection<Employee>(searchResults);
+            }
+            catch (Exception ex)
+            {
+                // Handle or log the exception
+                Console.WriteLine($"Error in SearchEmployeesAsync: {ex.Message}");
+                // Optionally, show a user-friendly error message
+            }
+        }
+
+        private async Task ExportToCsv()
+        {
+            try
+            {
+                var saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "CSV files (*.csv)|*.csv",
+                    Title = "Export to CSV",
+                };
+
+                if (saveFileDialog.ShowDialog() == true)
+                {
+                    string filePath = saveFileDialog.FileName;
+                    using (var writer = new StreamWriter(filePath))
+                    using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                    {
+                        csv.WriteRecords(Employees);
+                    }
+                    MessageBox.Show($"Data exported to {filePath}", "Export Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error exporting data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
         public void NavigateToAddScreen(AddEmployeeViewModel addEmployeeViewModel)
         {
             AddEmployeeView addEmployeeView = new AddEmployeeView();
             addEmployeeView.DataContext = addEmployeeViewModel;
+            addEmployeeView.Owner = Application.Current.MainWindow;
+            addEmployeeView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             addEmployeeView.Show();
         }
 
@@ -160,6 +226,8 @@ namespace UPSTest.WPF.AppLayer.ViewModels
         {
             EditEmployeeWindow editEmployeeWindow = new EditEmployeeWindow();
             editEmployeeWindow.DataContext = editEmployeeViewModel;
+            editEmployeeWindow.Owner = Application.Current.MainWindow;
+            editEmployeeWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             editEmployeeWindow.Show();
         }
 

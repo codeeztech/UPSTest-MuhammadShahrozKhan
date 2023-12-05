@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using UPSTest.WPF.Repositories.Models;
 using UPSTest.WPF.Services;
@@ -44,11 +45,12 @@ namespace UPSTest.WPF.AppLayer.ViewModels
         public EditEmployeeViewModel(IEmployeeService _employeeService)
         {
             this.employeeService = _employeeService;
+            Task.Run(LoadEmployeesAsync);
             UpdateCommand = new RelayCommand<Employee>(UpdateEmployeeAsync);
 
             Genders = new ObservableCollection<string> { "male", "female" };
             Statuses = new ObservableCollection<string> { "active", "inactive" };
-            Task.Run(() => LoadEmployeesAsync());
+          
 
         }
 
@@ -59,24 +61,50 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             try
             {
                 List<Employee> employees = await employeeService.GetAllEmployeeAsync();
-                Employees = new ObservableCollection<Employee>(employees);
+
+                if (employees != null)
+                    Employees = new ObservableCollection<Employee>(employees);
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error in LoadEmployeesAsync: {ex.Message}");
             }
         }
+
         public async void UpdateEmployeeAsync(Employee emp)
         {
             try
             {
                 if (Employee != null)
                 {
+                    string validationMsg = ValidateEmployee(Employee);
+                    if (validationMsg.Length > 0)
+                    {
+                        MessageBox.Show(validationMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                        return;
+                    }
+
                     Employee updatedEmployee = await employeeService.UpdateEmployeeAsync(Employee.Id, Employee);
+
                     if (updatedEmployee != null)
                     {
-                        int index = Employees.IndexOf(Employee);
-                        Employees[index] = updatedEmployee;
+                        MessageBox.Show("Employee updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        if (emp == null)
+                        {
+                            Employees = [updatedEmployee];
+                            return;
+                        }
+
+                        if (Employees != null)
+                        {
+                            int index = Employees.IndexOf(Employee);
+                            Employees[index] = updatedEmployee;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update employee. Please try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
@@ -85,7 +113,32 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 Console.WriteLine($"Error in UpdateEmployeeAsync: {ex.Message}");
             }
         }
+        private string ValidateEmployee(Employee employee)
+        {
+            string errMsg = string.Empty;
 
+            if (string.IsNullOrEmpty(employee.Name))
+            {
+                errMsg += "Please enter employee name\n";
+            }
+
+            if (string.IsNullOrEmpty(employee.Email))
+            {
+                errMsg += "Please enter email\n";
+            }
+
+            if (string.IsNullOrEmpty(employee.Gender))
+            {
+                errMsg += "Please select gender\n";
+            }
+
+            if (string.IsNullOrEmpty(employee.Status))
+            {
+                errMsg += "Please select status\n";
+            }
+
+            return errMsg;
+        }
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

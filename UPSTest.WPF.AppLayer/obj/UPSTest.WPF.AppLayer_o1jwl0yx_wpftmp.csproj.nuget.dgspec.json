@@ -1,0 +1,224 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj": {}
+  },
+  "projects": {
+    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj",
+        "projectName": "UPSTest.WPF.AppLayer",
+        "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/devopsshahroz/eShopOnWeb/_packaging/EShopOnWebShared/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows7.0",
+            "projectReferences": {
+              "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj": {
+                "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows7.0",
+          "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj",
+        "projectName": "UPSTest.WPF.Repositories",
+        "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/devopsshahroz/eShopOnWeb/_packaging/EShopOnWebShared/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
+        "projectName": "UPSTest.WPF.Services",
+        "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/devopsshahroz/eShopOnWeb/_packaging/EShopOnWebShared/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj": {
+                "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

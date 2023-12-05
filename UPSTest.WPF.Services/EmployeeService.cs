@@ -86,6 +86,11 @@ namespace UPSTest.WPF.Services
                 throw;
             }
         }
+
+        public async Task<List<Employee>> SearchEmployeesAsync(string searchName)
+        {
+            return await employeeRepository.SearchEmployeesAsync(searchName);
+        }
     }
 
 

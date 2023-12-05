@@ -10,6 +10,7 @@ namespace UPSTest.WPF.Repositories
         Task<Employee> UpdateEmployeeAsync(int id, Employee employee);
         Task<bool> DeleteEmployeeAsync(int id);
         Task<Employee> GetEmployeeAsync(int id);
+        Task<List<Employee>> SearchEmployeesAsync(string searchName);
     }
 
 }

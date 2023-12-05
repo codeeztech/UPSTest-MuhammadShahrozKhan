@@ -27,6 +27,8 @@ namespace UPSTest.WPF.AppLayer
         {
             InitializeComponent();
             DataContext = new AddEmployeeViewModel(employeeService,new EmployeeViewModel(employeeService));
+
+            txtEmployeeName.Focus();
         }
     }
 }
