@@ -7,7 +7,6 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-    <BaseOutputPath>D:\Personal\My Work\Tests\UPS\UPSTest.WPF.AutomationTest\obj</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
