@@ -67,7 +67,9 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in LoadEmployeesAsync: {ex.Message}");
+                string errMsg = $"Error in LoadEmployeesAsync: {ex.Message}";
+                Console.WriteLine(errMsg);
+                MessageBox.Show(errMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -88,18 +90,20 @@ namespace UPSTest.WPF.AppLayer.ViewModels
 
                     if (updatedEmployee != null)
                     {
-                        MessageBox.Show("Employee updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        //MessageBox.Show("Employee updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
                         if (emp == null)
                         {
-                            Employees = [updatedEmployee];
+                            if (Employees == null || Employees.Count == 0)
+                                Employees = [updatedEmployee];
                             return;
                         }
 
-                        if (Employees != null)
+                        if (Employees != null && Employees.Count > 0)
                         {
                             int index = Employees.IndexOf(Employee);
-                            Employees[index] = updatedEmployee;
+                            if (index != -1)
+                                Employees[index] = updatedEmployee;
                         }
                     }
                     else
@@ -110,9 +114,12 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in UpdateEmployeeAsync: {ex.Message}");
+                string errMsg = $"Error in UpdateEmployeeAsync: {ex.Message}";
+                Console.WriteLine(errMsg);
+                MessageBox.Show(errMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
         private string ValidateEmployee(Employee employee)
         {
             string errMsg = string.Empty;
@@ -139,6 +146,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
 
             return errMsg;
         }
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

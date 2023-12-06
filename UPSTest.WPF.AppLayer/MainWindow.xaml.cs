@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -32,20 +33,21 @@ namespace UPSTest.WPF.AppLayer
             InitializeComponent();
 
             loadingSpinner.Visibility = Visibility.Visible;
-            OnLoadWindowAsync();
+            OnLoadWindow();
             loadingSpinner.Visibility = Visibility.Collapsed;
 
             txtSearch.Focus();
         }
 
-        private void OnLoadWindowAsync()
+        private void OnLoadWindow()
         {
             var viewModel = new EmployeeViewModel(employeeService);
             DataContext = viewModel;
 
             viewModel.OnEmployeeAdded += ViewModel_OnEmployeeAdded;
-            viewModel.LoadEmployeesAsync();
-            // Application.Current.Dispatcher.Invoke(() => DataContext = viewModel);
+
+            PresentationTraceSources.Refresh();
+            PresentationTraceSources.SetTraceLevel(this, PresentationTraceLevel.High);
 
         }
 
@@ -63,7 +65,7 @@ namespace UPSTest.WPF.AppLayer
             }
         }
 
-        private async void btnRefresh_Click(object sender, RoutedEventArgs e)
+        private async void btnRefresh_Click(object? sender, RoutedEventArgs? e)
         {
             if (DataContext is EmployeeViewModel employeeViewModel)
             {

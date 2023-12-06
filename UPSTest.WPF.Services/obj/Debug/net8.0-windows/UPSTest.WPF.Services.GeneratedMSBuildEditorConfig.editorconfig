@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = UPSTest.WPF.Services
-build_property.ProjectDir = D:\Programming\Projects\Companies Test\UPS-Test-Polland\UPS_Test_MuhammadShahrozKhan\UPSTest-MuhammadShahrozKhan\UPSTest.WPF.Services\
+build_property.ProjectDir = D:\Personal\My Work\Tests\UPS\UPSTest.WPF.Services\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

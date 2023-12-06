@@ -55,24 +55,19 @@ namespace UPSTest.WPF.AutomationTest
         [TestMethod]
         public async Task TestDeleteEmployeeAsync()
         {
-            // Arrange
+         
             var employeeServiceMock = new Mock<IEmployeeService>();
             var viewModel = new EmployeeViewModel(employeeServiceMock.Object);
 
-            // Set up the expected result for the mocked service
             var employeeToDelete = new Employee { Id = 5816341, Name = "NewShahrozUnitTest" , Email= "NewShahrozUnitTest@test.com",Gender="male",Status="active" };
             employeeServiceMock.Setup(s => s.DeleteEmployeeAsync(It.IsAny<int>()))
                 .ReturnsAsync(true);
 
-            // Add the employee to the view model's collection
             viewModel.Employees.Add(employeeToDelete);
-
-            // Act
             viewModel.SelectedEmployee = employeeToDelete;
             viewModel.DeleteEmployeeCommand.Execute(employeeToDelete);
-            await Task.Delay(1000); // Wait for the asynchronous operation to complete
+            await Task.Delay(1000); 
 
-            // Assert
             Assert.AreEqual(0, viewModel?.Employees.Count);
         }
 
@@ -80,7 +75,6 @@ namespace UPSTest.WPF.AutomationTest
         public async Task TestSaveEmployee()
         {
             var employeeServiceMock = new Mock<IEmployeeService>();
-          //  var employeeViewModelMock = new EmployeeViewModel(new IEmployeeService());
             var viewModel = new AddEmployeeViewModel(employeeServiceMock.Object, null);
 
             var addedEmployee = new Employee { Id = 5814995, Name = "NewAddedShahrozUnitTest" , Email= "newshahroz123@unittest.com", Gender="male",Status="active" };
@@ -89,7 +83,7 @@ namespace UPSTest.WPF.AutomationTest
 
             viewModel.Employee = new Employee { Name = "NewAddedShahrozUnitTest", Email = "newshahroz123@unittest.com", Gender = "male", Status = "active" };
             viewModel.SaveCommand.Execute(addedEmployee);
-            await Task.Delay(500); // Wait for the asynchronous operation to complete
+            await Task.Delay(500); 
 
             Assert.AreEqual("NewAddedShahrozUnitTest", viewModel.Employees[0].Name);
         }
@@ -97,21 +91,17 @@ namespace UPSTest.WPF.AutomationTest
         [TestMethod]
         public async Task TestUpdateEmployeeAsync()
         {
-            // Arrange
             var employeeServiceMock = new Mock<IEmployeeService>();
             var viewModel = new EditEmployeeViewModel(employeeServiceMock.Object);
 
-            // Set up the expected result for the mocked service
             var updatedEmployee = new Employee { Id = 5814924, Name = "UpdatedShahroz", Email = "UpdatedShahroz@unittest.com", Gender = "female", Status = "inactive" };
             employeeServiceMock.Setup(s => s.UpdateEmployeeAsync(It.IsAny<int>(), It.IsAny<Employee>()))
                 .ReturnsAsync(updatedEmployee);
 
-            // Act
             viewModel.Employee = new Employee { Id = 5814924, Name = "Shahroz", Email = "shahroz@test.com", Gender = "male", Status = "active" };
             viewModel.UpdateCommand.Execute(null);
-            await Task.Delay(500); // Wait for the asynchronous operation to complete
+            await Task.Delay(500); 
 
-            // Assert
             Assert.AreEqual("UpdatedShahroz", viewModel.Employees[0].Name);
         }
     }

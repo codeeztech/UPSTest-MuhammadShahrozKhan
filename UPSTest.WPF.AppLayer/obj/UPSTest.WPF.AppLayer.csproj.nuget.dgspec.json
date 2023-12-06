@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj": {}
+    "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj": {
+    "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj",
+        "projectUniqueName": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj",
         "projectName": "UPSTest.WPF.AppLayer",
-        "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.AppLayer\\obj\\",
+        "projectPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.AppLayer\\UPSTest.WPF.AppLayer.csproj",
+        "packagesPath": "C:\\Users\\Shahroz.SAIF-ZONE\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.AppLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Shahroz.SAIF-ZONE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,16 +25,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/devopsshahroz/eShopOnWeb/_packaging/EShopOnWebShared/nuget/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows7.0",
             "projectReferences": {
-              "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj": {
-                "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj"
+              "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj": {
+                "projectPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj"
               }
             }
           }
@@ -86,21 +83,20 @@
         }
       }
     },
-    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj": {
+    "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj",
+        "projectUniqueName": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj",
         "projectName": "UPSTest.WPF.Repositories",
-        "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\obj\\",
+        "projectPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj",
+        "packagesPath": "C:\\Users\\Shahroz.SAIF-ZONE\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Shahroz.SAIF-ZONE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,9 +104,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/devopsshahroz/eShopOnWeb/_packaging/EShopOnWebShared/nuget/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
@@ -156,21 +150,20 @@
         }
       }
     },
-    "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj": {
+    "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
+        "projectUniqueName": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
         "projectName": "UPSTest.WPF.Services",
-        "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Services\\obj\\",
+        "projectPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Services\\UPSTest.WPF.Services.csproj",
+        "packagesPath": "C:\\Users\\Shahroz.SAIF-ZONE\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Shahroz.SAIF-ZONE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,16 +171,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/devopsshahroz/eShopOnWeb/_packaging/EShopOnWebShared/nuget/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj": {
-                "projectPath": "D:\\Programming\\Projects\\Companies Test\\UPS-Test-Polland\\UPS_Test_MuhammadShahrozKhan\\UPSTest-MuhammadShahrozKhan\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj"
+              "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj": {
+                "projectPath": "D:\\Personal\\My Work\\Tests\\UPS\\UPSTest.WPF.Repositories\\UPSTest.WPF.Repositories.csproj"
               }
             }
           }

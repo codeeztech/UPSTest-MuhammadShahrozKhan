@@ -37,11 +37,8 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 _employees = value;
                 OnPropertyChanged(nameof(Employees));
 
-                // Refresh the view
                 ICollectionView view = CollectionViewSource.GetDefaultView(Employees);
                 view.Refresh();
-
-                Console.WriteLine("Employees collection updated.");
             }
         }
 
@@ -64,17 +61,14 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             {
                 _searchText = value;
                 OnPropertyChanged(nameof(SearchText));
-
-                // Trigger search when the text changes
                 SearchEmployeesAsync();
             }
         }
+
         public EmployeeViewModel(IEmployeeService employeeService)
         {
             Employees = new ObservableCollection<Employee>();
             this.employeeService = employeeService;
-
-            Task.Run(() => LoadEmployeesAsync());
 
             OnEmployeeAdded += EmployeeViewModel_OnEmployeeAdded;
 
@@ -82,6 +76,8 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             DeleteEmployeeCommand = new RelayCommand<Employee>(DeleteEmployee);
             SearchCommand = new RelayCommand(SearchEmployeesAsync);
             ExportToCsvCommand = new RelayCommand(ExportToCsv);
+
+            Application.Current.Dispatcher.Invoke(() => { Task.Run(LoadEmployeesAsync); });
         }
 
         private void EmployeeViewModel_OnEmployeeAdded(object? sender, EventArgs e)
@@ -99,8 +95,6 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             EditEmployeeViewModel editEmployeeViewModel = new EditEmployeeViewModel(employeeService);
             editEmployeeViewModel.Employee = employee;
             NavigateToEditScreen(editEmployeeViewModel);
-
-
         }
 
         private async void DeleteEmployee(Employee employee)
@@ -135,7 +129,9 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in LoadEmployeesAsync: {ex.Message}");
+                string errMsg = $"Error in LoadEmployeesAsync: {ex.Message}";
+                Console.WriteLine(errMsg);
+                MessageBox.Show(errMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -146,10 +142,13 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 if (employee != null)
                 {
                     bool isDeleted = await employeeService.DeleteEmployeeAsync(employee.Id);
-                    if (isDeleted)
+                    Application.Current.Dispatcher.Invoke(() =>
                     {
-                        Employees.Remove(employee);
-                    }
+                        if (isDeleted)
+                        {
+                            Employees.Remove(employee);
+                        }
+                    });
                 }
             }
             catch (Exception ex)
@@ -166,7 +165,9 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in LoadEmployeeByIdAsync: {ex.Message}");
+                string errMsg = $"Error in LoadEmployeeByIdAsync: {ex.Message}";
+                Console.WriteLine(errMsg);
+                MessageBox.Show(errMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -174,15 +175,14 @@ namespace UPSTest.WPF.AppLayer.ViewModels
         {
             try
             {
-                // Trigger the search based on the current SearchText
                 List<Employee> searchResults = await employeeService.SearchEmployeesAsync(SearchText);
                 Employees = new ObservableCollection<Employee>(searchResults);
             }
             catch (Exception ex)
             {
-                // Handle or log the exception
-                Console.WriteLine($"Error in SearchEmployeesAsync: {ex.Message}");
-                // Optionally, show a user-friendly error message
+                string errMsg = $"Error in SearchEmployeesAsync: {ex.Message}";
+                Console.WriteLine(errMsg);
+                MessageBox.Show(errMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -209,7 +209,9 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error exporting data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                string errMsg = $"Error exporting data: {ex.Message}";
+                Console.WriteLine(errMsg);
+                MessageBox.Show(errMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

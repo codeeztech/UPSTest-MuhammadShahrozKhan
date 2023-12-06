@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UPSTest.WPF.Repositories")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a31ee19bce08260b7ae831ef7a0d677ff3be619")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efe95e940b3cad447bcf1f11fbf64e360ca5690a")]
 [assembly: System.Reflection.AssemblyProductAttribute("UPSTest.WPF.Repositories")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UPSTest.WPF.Repositories")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

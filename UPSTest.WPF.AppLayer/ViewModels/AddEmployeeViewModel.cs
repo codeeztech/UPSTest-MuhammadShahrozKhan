@@ -96,6 +96,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 Console.WriteLine($"Error in LoadEmployeesAsync: {ex.Message}");
             }
         }
+
         public async Task NewUpdateLoadEmployeesAsync()
         {
             try
@@ -108,6 +109,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 Console.WriteLine($"Error in LoadEmployeesAsync: {ex.Message}");
             }
         }
+
         private async Task SaveEmployee()
         {
             try
@@ -115,7 +117,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 string validationMsg = ValidateEmployee(Employee);
                 if (validationMsg.Length > 0)
                 {
-                    MessageBox.Show(validationMsg, "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(validationMsg, "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
 
@@ -132,10 +134,12 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                     {
                         employeeViewModel.AddEmployee();
 
-                        MainWindow mw = new MainWindow();
+                        MainWindow mw = new();
                         mw.ViewModel_OnEmployeeAdded(null, null);
                         CloseAddEmployeeWindow();
-                        Task.Run(NewUpdateLoadEmployeesAsync);
+                       
+                        await Task.Run(NewUpdateLoadEmployeesAsync);
+
                         Employee = new Employee();
                     }
                 }
@@ -151,6 +155,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 MessageBox.Show(errMsg);
             }
         }
+
         private void CloseAddEmployeeWindow()
         {
             if (Application.Current.Windows.OfType<AddEmployeeView>().Any())
@@ -158,6 +163,7 @@ namespace UPSTest.WPF.AppLayer.ViewModels
                 Application.Current.Windows.OfType<AddEmployeeView>().First().Close();
             }
         }
+
         private string ValidateEmployee(Employee employee)
         {
             string errMsg = string.Empty;
@@ -170,6 +176,13 @@ namespace UPSTest.WPF.AppLayer.ViewModels
             if (string.IsNullOrEmpty(employee.Email))
             {
                 errMsg += "Please enter email\n";
+            }
+            else
+            {
+                if (!IsValidEmail(employee.Email))
+                {
+                    errMsg += "Please enter a valid email address";
+                }
             }
 
             if (string.IsNullOrEmpty(employee.Gender))
@@ -184,6 +197,20 @@ namespace UPSTest.WPF.AppLayer.ViewModels
 
             return errMsg;
         }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
